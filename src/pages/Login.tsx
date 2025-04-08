@@ -19,7 +19,25 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real app, you would validate and send to an API
+    // Check for admin credentials
+    if (email === 'aaronmecate182@gmail.com' && password === 'qwen123') {
+      toast({
+        title: "Admin Login successful",
+        description: "Redirecting to admin dashboard...",
+      });
+      
+      // Store admin status in localStorage
+      localStorage.setItem('isAdmin', 'true');
+      localStorage.setItem('adminEmail', email);
+      
+      // Redirect to admin dashboard
+      setTimeout(() => {
+        navigate('/admin/dashboard');
+      }, 1000);
+      return;
+    }
+    
+    // Regular user login (in a real app, you would validate and send to an API)
     toast({
       title: "Login successful",
       description: "Redirecting you to your account...",
@@ -116,7 +134,7 @@ const Login = () => {
               <CardFooter className="flex flex-col space-y-4">
                 <div className="text-sm text-center">
                   Don't have an account?{" "}
-                  <Link to="/register" className="text-pastry-berry font-medium hover:underline">
+                  <Link to="/signup" className="text-pastry-berry font-medium hover:underline">
                     Sign up
                   </Link>
                 </div>
