@@ -42,7 +42,7 @@ const Hero = () => {
               asChild
             >
               <Link to="/about">
-                Our Story
+                <span className="text-black">Our Story</span>
               </Link>
             </Button>
           </div>
