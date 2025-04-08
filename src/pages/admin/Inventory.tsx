@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AdminLayout from '@/components/layout/AdminLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -244,7 +243,7 @@ const Inventory = () => {
                                   style={{ backgroundColor: payload[0].payload.color }}
                                 ></div>
                                 <span>
-                                  {payload[0].value} items ({Math.round((payload[0].value / 11) * 100)}%)
+                                  {payload[0].value} items ({Math.round((Number(payload[0].value) / 11) * 100)}%)
                                 </span>
                               </div>
                             </div>

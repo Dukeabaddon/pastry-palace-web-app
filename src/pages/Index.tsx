@@ -11,10 +11,7 @@ const Index = () => {
   return (
     <MainLayout>
       <Hero />
-      <div className="relative">
-        <div className="absolute inset-x-0 top-0 h-32 bg-pastry-brown" />
-        <Categories />
-      </div>
+      <Categories />
       <FeaturedProducts />
       <div className="bg-pastry-background py-16 px-4">
         <div className="pastry-container">
