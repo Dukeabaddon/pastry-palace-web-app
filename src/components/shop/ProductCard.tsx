@@ -19,7 +19,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className="pastry-card group">
+    <div className="pastry-card group flex flex-col h-full">
       <div className="relative overflow-hidden">
         <Link to={`/product/${product.id}`}>
           <img 
@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           />
         </Link>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <div className="text-xs text-pastry-berry font-medium uppercase tracking-wide mb-1">
           {product.category}
         </div>
@@ -38,10 +38,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             {product.name}
           </h3>
         </Link>
-        <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+        <p className="text-sm text-gray-600 mt-1 line-clamp-2 flex-grow">
           {product.description}
         </p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-4 pt-3 border-t border-gray-100">
           <span className="font-medium text-pastry-brown">
             ${product.price.toFixed(2)}
           </span>

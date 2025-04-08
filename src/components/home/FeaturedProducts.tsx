@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import ProductCard, { ProductProps } from '../shop/ProductCard';
 import { Link } from 'react-router-dom';
 
-// Sample featured products data
+// Sample featured products data with verified images
 const featuredProducts: ProductProps[] = [
   {
     id: 1,
@@ -28,7 +28,7 @@ const featuredProducts: ProductProps[] = [
     description: 'Six assorted French macarons in various flavors.',
     price: 12.99,
     image: 'https://images.unsplash.com/photo-1558326567-98166e232c52?q=80&w=1376&auto=format&fit=crop',
-    category: 'French'
+    category: 'Macaroons'
   },
   {
     id: 4,

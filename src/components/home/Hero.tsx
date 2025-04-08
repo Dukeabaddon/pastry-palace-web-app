@@ -38,7 +38,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-pastry-cream text-pastry-cream hover:bg-pastry-cream/10"
+              className="border-pastry-cream text-pastry-cream hover:bg-pastry-cream/10 border-2"
               asChild
             >
               <Link to="/about">

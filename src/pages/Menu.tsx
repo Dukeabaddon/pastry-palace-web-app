@@ -4,7 +4,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import ProductCard, { ProductProps } from '@/components/shop/ProductCard';
 import { Button } from '@/components/ui/button';
 
-// Sample products data
+// Sample products data with verified images
 const allProducts: ProductProps[] = [
   {
     id: 1,
@@ -12,7 +12,7 @@ const allProducts: ProductProps[] = [
     description: 'Buttery flaky pastry filled with rich chocolate.',
     price: 3.99,
     image: 'https://images.unsplash.com/photo-1623334044303-241021148842?q=80&w=1470&auto=format&fit=crop',
-    category: 'Viennoiserie'
+    category: 'Pastry'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const allProducts: ProductProps[] = [
     description: 'Sweet tart shell filled with pastry cream and topped with fresh strawberries.',
     price: 4.99,
     image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=1470&auto=format&fit=crop',
-    category: 'Tarts'
+    category: 'Pastry'
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const allProducts: ProductProps[] = [
     description: 'Six assorted French macarons in various flavors.',
     price: 12.99,
     image: 'https://images.unsplash.com/photo-1558326567-98166e232c52?q=80&w=1376&auto=format&fit=crop',
-    category: 'French'
+    category: 'Macaroons'
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const allProducts: ProductProps[] = [
     description: 'Delicate choux pastry filled with vanilla cream and topped with chocolate.',
     price: 3.99,
     image: 'https://images.unsplash.com/photo-1682180123981-99a77c99c0e7?q=80&w=1505&auto=format&fit=crop',
-    category: 'French'
+    category: 'Pastry'
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ const allProducts: ProductProps[] = [
     description: 'Moist muffin packed with juicy blueberries.',
     price: 2.99,
     image: 'https://images.unsplash.com/photo-1607958996333-41320f36d304?q=80&w=1470&auto=format&fit=crop',
-    category: 'Muffins'
+    category: 'Cakes'
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const allProducts: ProductProps[] = [
     description: 'Classic pie with spiced apples in a flaky crust.',
     price: 15.99,
     image: 'https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=1374&auto=format&fit=crop',
-    category: 'Pies'
+    category: 'Pastry'
   },
   {
     id: 8,
@@ -68,19 +68,46 @@ const allProducts: ProductProps[] = [
     description: 'Chewy cookie packed with chocolate chips.',
     price: 2.49,
     image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1470&auto=format&fit=crop',
-    category: 'Cookies'
+    category: 'Cakes'
+  },
+  {
+    id: 9,
+    name: 'Glazed Donut',
+    description: 'Light and fluffy donut with a sweet glaze.',
+    price: 1.99,
+    image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1064&auto=format&fit=crop',
+    category: 'Donuts'
+  },
+  {
+    id: 10,
+    name: 'Red Velvet Cupcake',
+    description: 'Moist red velvet cupcake with cream cheese frosting.',
+    price: 3.49,
+    image: 'https://images.unsplash.com/photo-1599785209707-a456fc1337bb?q=80&w=986&auto=format&fit=crop',
+    category: 'Cupcakes'
+  },
+  {
+    id: 11,
+    name: 'Chocolate Macaroon',
+    description: 'Delicate chocolate macaroon with ganache filling.',
+    price: 2.99,
+    image: 'https://images.unsplash.com/photo-1558326567-98166e232c52?q=80&w=1376&auto=format&fit=crop',
+    category: 'Macaroons'
   }
 ];
 
-// Unique categories for filter
-const categories = [...new Set(allProducts.map(product => product.category))];
+// Define the exact categories we want
+const categoryOrder = ["All", "Latest", "Cakes", "Cupcakes", "Donuts", "Macaroons", "Pastry", "Bread"];
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   
-  const filteredProducts = activeCategory
+  // Filter products based on active category
+  const filteredProducts = activeCategory && activeCategory !== "All" && activeCategory !== "Latest"
     ? allProducts.filter(product => product.category === activeCategory)
-    : allProducts;
+    : activeCategory === "Latest" 
+      ? [...allProducts].sort((a, b) => b.id - a.id).slice(0, 6) // Latest items
+      : allProducts;
 
   return (
     <MainLayout>
@@ -93,22 +120,11 @@ const Menu = () => {
         </div>
       </div>
 
-      {/* Category Filters */}
+      {/* Category Filters - Centered */}
       <div className="bg-pastry-cream py-4 sticky top-16 z-10 shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex flex-nowrap overflow-x-auto space-x-2 py-1 hide-scrollbar">
-            <Button
-              variant={activeCategory === null ? "default" : "outline"}
-              className={`${
-                activeCategory === null 
-                  ? "bg-pastry-brown text-white" 
-                  : "border-pastry-brown text-pastry-brown hover:bg-pastry-brown hover:text-white"
-              } whitespace-nowrap`}
-              onClick={() => setActiveCategory(null)}
-            >
-              All Items
-            </Button>
-            {categories.map((category) => (
+          <div className="flex flex-wrap justify-center gap-2 py-1">
+            {categoryOrder.map((category) => (
               <Button
                 key={category}
                 variant={activeCategory === category ? "default" : "outline"}
@@ -117,7 +133,7 @@ const Menu = () => {
                     ? "bg-pastry-brown text-white" 
                     : "border-pastry-brown text-pastry-brown hover:bg-pastry-brown hover:text-white"
                 } whitespace-nowrap`}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => setActiveCategory(category === "All" ? null : category)}
               >
                 {category}
               </Button>
