@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
@@ -31,16 +32,16 @@ const About = () => {
             </p>
             <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="text-center">
-                <div className="font-serif text-4xl text-pastry-gold font-bold">25+</div>
-                <div className="text-pastry-cream text-sm">Years of Experience</div>
+                <div className="font-serif text-4xl text-pastry-gold font-bold">8,000+</div>
+                <div className="text-pastry-cream text-sm">Happy Customers</div>
               </div>
               <div className="text-center">
-                <div className="font-serif text-4xl text-pastry-gold font-bold">100+</div>
-                <div className="text-pastry-cream text-sm">Unique Recipes</div>
+                <div className="font-serif text-4xl text-pastry-gold font-bold">45+</div>
+                <div className="text-pastry-cream text-sm">Filipino Specialties</div>
               </div>
               <div className="text-center">
-                <div className="font-serif text-4xl text-pastry-gold font-bold">1</div>
-                <div className="text-pastry-cream text-sm">Flagship Location</div>
+                <div className="font-serif text-4xl text-pastry-gold font-bold">3</div>
+                <div className="text-pastry-cream text-sm">Generations of Bakers</div>
               </div>
             </div>
           </div>

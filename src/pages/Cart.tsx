@@ -172,20 +172,20 @@ const Cart = () => {
             
             {/* Order Summary */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
+              <div className="bg-white rounded-lg shadow-lg p-6 sticky top-8">
                 <h2 className="text-xl font-serif font-bold text-pastry-brown mb-4">Order Summary</h2>
                 
                 {/* Order Progress */}
                 <div className="mb-6 bg-pastry-background p-4 rounded-lg">
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600">Cart</span>
-                    <span className="text-sm text-gray-600">Shipping</span>
-                    <span className="text-sm text-gray-600">Payment</span>
+                    <span className="text-sm text-gray-600 font-medium">Cart</span>
+                    <span className="text-sm text-gray-500">Shipping</span>
+                    <span className="text-sm text-gray-500">Payment</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                     <div className="bg-pastry-berry h-2.5 rounded-full w-1/3"></div>
                   </div>
-                  <p className="text-xs text-gray-500">Step 1 of 3</p>
+                  <p className="text-xs text-gray-500 mt-1">Step 1 of 3</p>
                 </div>
                 
                 {/* Price Breakdown */}
@@ -239,44 +239,63 @@ const Cart = () => {
                   </div>
                 </div>
                 
-                {/* Checkout Button */}
+                {/* Checkout Button with Animation */}
                 <Button 
-                  className="w-full bg-pastry-brown text-white hover:bg-pastry-berry mb-3"
+                  className="w-full bg-pastry-brown hover:bg-pastry-berry mb-3 relative overflow-hidden group transition-all duration-300"
                 >
-                  <CreditCard className="mr-2 h-4 w-4" />
-                  Proceed to Checkout
+                  <span className="absolute inset-0 w-0 bg-pastry-berry transition-all duration-500 ease-out group-hover:w-full"></span>
+                  <span className="relative flex items-center justify-center">
+                    <CreditCard className="mr-2 h-4 w-4" />
+                    Proceed to Checkout
+                  </span>
                 </Button>
                 
                 {/* Delivery Information */}
                 <div className="mt-6 pt-4 border-t border-gray-100">
                   <div className="flex items-center text-sm text-gray-600 mb-2">
                     <Truck className="h-4 w-4 mr-2 text-pastry-berry" />
-                    <span>Delivery available only in Metro Manila</span>
+                    <span className="text-sm">Delivery available only in Metro Manila</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <CreditCard className="h-4 w-4 mr-2 text-pastry-berry" />
-                    <span>Secure payment via major credit cards and GCash</span>
+                    <span className="text-sm">Secure payment via major credit cards and GCash</span>
                   </div>
                 </div>
+                
+                {/* Free Delivery Threshold Progress */}
+                {subtotal < 1500 && (
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <p className="text-sm text-gray-600 mb-2">
+                      Add ₱{(1500 - subtotal).toFixed(2)} more for free delivery!
+                    </p>
+                    <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-pastry-berry rounded-full transition-all duration-500"
+                        style={{ width: `${Math.min(100, (subtotal / 1500) * 100)}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         ) : (
-          // Empty Cart
+          // Empty Cart with Improved Animation
           <div className="text-center py-12 bg-white rounded-lg shadow-sm">
             <div className="mb-6">
-              <div className="mx-auto h-24 w-24 text-gray-400 bg-gray-50 rounded-full flex items-center justify-center">
+              <div className="mx-auto h-24 w-24 text-gray-400 bg-gray-50 rounded-full flex items-center justify-center animate-pulse">
                 <ShoppingBag className="h-12 w-12" />
               </div>
             </div>
             <h2 className="text-xl font-serif font-medium text-pastry-brown mb-2">Your cart is empty</h2>
             <p className="text-gray-500 mb-6">Looks like you haven't added any pastries to your cart yet.</p>
             <Button 
-              className="bg-pastry-brown text-white hover:bg-pastry-berry"
+              className="bg-pastry-brown text-white hover:bg-pastry-berry relative overflow-hidden group"
               asChild
             >
               <Link to="/menu">
-                Browse Our Menu
+                <span className="absolute inset-0 w-0 bg-pastry-berry transition-all duration-500 ease-out group-hover:w-full"></span>
+                <span className="relative">Browse Our Menu</span>
               </Link>
             </Button>
           </div>

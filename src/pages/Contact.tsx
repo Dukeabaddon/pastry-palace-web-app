@@ -169,7 +169,7 @@ const Contact = () => {
                   <span className="absolute left-0 bottom-0 w-24 h-2 bg-pastry-gold/30 z-0"></span>
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  We're currently located in Metro Manila, serving the best Filipino pastries and breads. 
+                  We're located in Quezon City, serving the best Filipino pastries and breads. 
                   Come visit our bakery to experience the rich flavors of our traditional recipes!
                 </p>
                 
@@ -180,14 +180,14 @@ const Contact = () => {
                         <MapPin className="h-6 w-6 text-pastry-berry" />
                       </div>
                       <div className="ml-4">
-                        <h3 className="font-medium text-pastry-brown">Manila Shop</h3>
+                        <h3 className="font-medium text-pastry-brown">Quezon City Shop</h3>
                         <address className="not-italic text-gray-600 mt-1">
-                          123 Rizal Avenue<br />
-                          Makati City, Metro Manila<br />
-                          Philippines 1200
+                          456 Katipunan Avenue<br />
+                          Loyola Heights, Quezon City<br />
+                          Metro Manila, Philippines 1108
                         </address>
                         <p className="text-xs mt-2 bg-pastry-gold/20 px-2 py-1 rounded-full inline-block text-pastry-brown">
-                          Near Greenbelt Shopping Center
+                          Near Ateneo de Manila University
                         </p>
                       </div>
                     </div>
@@ -404,11 +404,11 @@ const Contact = () => {
           <div className="text-center mb-12 relative">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-pastry-gold/30 rounded-full"></div>
             <h2 className="text-3xl font-serif font-bold text-pastry-brown relative inline-block">
-              <span className="relative z-10">Find Us in Manila</span>
+              <span className="relative z-10">Find Us in Quezon City</span>
               <span className="absolute left-0 bottom-0 w-full h-2 bg-pastry-gold/30 z-0"></span>
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-              We're conveniently located in Makati City, just a few minutes from Greenbelt Shopping Center. 
+              We're conveniently located in Loyola Heights, just a few minutes from Ateneo de Manila University. 
               Come visit us and experience our freshly-baked Filipino pastries!
             </p>
           </div>
@@ -417,20 +417,20 @@ const Contact = () => {
             <div className="rounded-lg overflow-hidden shadow-xl border-8 border-white relative group hover:shadow-2xl transition-shadow duration-300">
               <div className="relative pb-[56.25%] h-0 overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.410646515874!2d121.04882857483134!3d14.632240776996116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c71ddf289f%3A0x7328813ca811efa3!2sMakati%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sus!4v1681308269889!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61765.12085134767!2d121.01479846726777!3d14.63529587620903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7685462a75f%3A0x8bfb93bd1a3824a7!2sQuezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1681308269889!5m2!1sen!2sph" 
                   className="absolute top-0 left-0 w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Pastry Palace Manila Location"
+                  title="Pastry Palace Quezon City Location"
                 ></iframe>
               </div>
               
               {/* Map Overlay Card */}
               <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-md max-w-xs border-l-4 border-pastry-berry transition-all duration-300 hover:scale-105">
-                <h3 className="font-serif text-lg text-pastry-brown font-medium mb-2">Pastry Palace Manila</h3>
+                <h3 className="font-serif text-lg text-pastry-brown font-medium mb-2">Pastry Palace Quezon City</h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  123 Rizal Avenue, Makati City, Metro Manila, Philippines 1200
+                  456 Katipunan Avenue, Loyola Heights, Quezon City, Metro Manila, Philippines 1108
                 </p>
                 <div className="flex items-center text-pastry-berry text-sm font-medium">
                   <MapPin className="h-4 w-4 mr-1" />
@@ -441,10 +441,10 @@ const Contact = () => {
             
             <div className="flex justify-between mt-6 px-4">
               <div className="text-sm text-gray-500">
-                <span className="font-medium text-pastry-brown mr-1">Parking:</span> Available at Greenbelt Mall
+                <span className="font-medium text-pastry-brown mr-1">Parking:</span> Available on premises
               </div>
               <div className="text-sm text-gray-500">
-                <span className="font-medium text-pastry-brown mr-1">Public Transport:</span> Nearby MRT station
+                <span className="font-medium text-pastry-brown mr-1">Public Transport:</span> Nearby jeepney and UV Express routes
               </div>
             </div>
           </div>
@@ -464,9 +464,9 @@ const Contact = () => {
             
             <div className="space-y-6">
               <div className="bg-pastry-background p-6 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
-                <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Do you deliver across the Philippines?</h3>
+                <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Do you deliver outside Metro Manila?</h3>
                 <p className="text-gray-600">
-                  Currently, we offer delivery within Metro Manila only. We're working on expanding our delivery services to other regions of the Philippines in the near future. Stay tuned for updates!
+                  Currently, we only accept orders within Metro Manila. We're working hard to expand our delivery services outside the metro area soon. Thank you for your patience and support!
                 </p>
               </div>
               
@@ -478,16 +478,23 @@ const Contact = () => {
               </div>
               
               <div className="bg-pastry-background p-6 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
-                <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Do you offer Halal or dietary-specific options?</h3>
+                <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Do you offer special dietary options?</h3>
                 <p className="text-gray-600">
-                  We offer a range of vegetarian pastries and can accommodate some dietary restrictions. Please inquire directly for specific requirements and our current Halal-certified options. We're always expanding our menu to be more inclusive.
+                  Yes! We offer vegetarian pastries and a selection of sugar-free options. Our ube products can be made gluten-free upon request. Please inform us of any dietary restrictions when placing your order, and we'll do our best to accommodate your needs.
                 </p>
               </div>
               
               <div className="bg-pastry-background p-6 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
                 <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Can I request Filipino regional specialties?</h3>
                 <p className="text-gray-600">
-                  Yes! We love creating regional Filipino pastry specialties. Whether it's Vigan empanadas, Cebuano torta, or other provincial delicacies, we can usually accommodate special requests with advance notice.
+                  Absolutely! We love creating regional Filipino pastry specialties. Whether it's Vigan empanadas, Cebuano torta, or other provincial delicacies, we can usually accommodate special requests with advance notice. Just let us know what you're craving!
+                </p>
+              </div>
+              
+              <div className="bg-pastry-background p-6 rounded-lg hover:shadow-md transition-shadow cursor-pointer group">
+                <h3 className="text-xl font-serif text-pastry-brown mb-3 group-hover:text-pastry-berry transition-colors">Do you offer gift wrapping or packaging?</h3>
+                <p className="text-gray-600">
+                  Yes, we offer beautiful Filipino-inspired gift packaging for all occasions. Our special bilao packaging is perfect for celebrations, and we can customize messages on gift cards in Filipino or English. Additional gift wrapping fees may apply.
                 </p>
               </div>
             </div>
