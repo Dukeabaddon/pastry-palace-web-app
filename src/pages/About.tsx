@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
@@ -40,8 +39,8 @@ const About = () => {
                 <div className="text-pastry-cream text-sm">Unique Recipes</div>
               </div>
               <div className="text-center">
-                <div className="font-serif text-4xl text-pastry-gold font-bold">12</div>
-                <div className="text-pastry-cream text-sm">Locations</div>
+                <div className="font-serif text-4xl text-pastry-gold font-bold">1</div>
+                <div className="text-pastry-cream text-sm">Flagship Location</div>
               </div>
             </div>
           </div>
@@ -80,12 +79,6 @@ const About = () => {
                 <p className="text-gray-700 mb-8 leading-relaxed">
                   Through economic challenges and changing times, our commitment to quality and authenticity has remained unwavering. Today, Pastry Palace continues to serve as a cornerstone of Filipino baking excellence.
                 </p>
-                <Button 
-                  size="lg" 
-                  className="bg-pastry-brown text-white hover:bg-pastry-brown/90"
-                >
-                  Discover Our Menu
-                </Button>
               </div>
             </div>
           </div>
@@ -216,15 +209,24 @@ const About = () => {
         </div>
       </section>
 
-      {/* Locations Map Section */}
+      {/* Locations Map Section - Updated for single location */}
       <section className="py-20 bg-pastry-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm mb-3">Our Locations</h6>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">Find Us Across the Philippines</h2>
-            <p className="text-gray-700">
-              From Manila to Davao, we bring our delicious pastries closer to you with multiple locations across the country.
+            <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm mb-3">Our Location</h6>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">Visit Our Flagship Store</h2>
+            <p className="text-gray-700 mb-8">
+              We're currently located in Metro Manila, serving our delicious Filipino pastries to local customers.
             </p>
+            <div className="bg-white p-6 rounded-lg shadow-md mb-10 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center gap-2 text-pastry-berry mb-4">
+                <MapPin className="h-5 w-5" />
+                <span className="font-medium">Service Area Notice</span>
+              </div>
+              <p className="text-gray-700">
+                We are currently only accepting orders within Metro Manila. We're working hard to expand our delivery services outside the metro area soon. Thank you for your patience and support!
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -232,7 +234,7 @@ const About = () => {
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1604054094723-3a949e24311f?q=80&w=1470&auto=format&fit=crop" 
-                  alt="Philippines map" 
+                  alt="Manila map" 
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -240,7 +242,7 @@ const About = () => {
             
             <div className="lg:col-span-4">
               <div className="bg-white p-6 rounded-lg shadow-lg h-full">
-                <h3 className="font-serif font-medium text-xl text-pastry-brown mb-6">Our Flagship Stores</h3>
+                <h3 className="font-serif font-medium text-xl text-pastry-brown mb-6">Our Flagship Store</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
@@ -248,33 +250,12 @@ const About = () => {
                       <MapPin className="h-5 w-5 text-pastry-berry" />
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-medium text-pastry-brown">Manila</h4>
+                      <h4 className="font-medium text-pastry-brown">Manila Flagship</h4>
                       <p className="text-gray-600 text-sm mt-1">
-                        123 Rizal Avenue, Makati City
+                        123 Rizal Avenue, Makati City, Metro Manila, Philippines 1200
                       </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <MapPin className="h-5 w-5 text-pastry-berry" />
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="font-medium text-pastry-brown">Cebu</h4>
-                      <p className="text-gray-600 text-sm mt-1">
-                        45 Osmena Boulevard, Cebu City
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <MapPin className="h-5 w-5 text-pastry-berry" />
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="font-medium text-pastry-brown">Davao</h4>
-                      <p className="text-gray-600 text-sm mt-1">
-                        78 Duterte Street, Davao City
+                      <p className="text-xs mt-2 text-pastry-berry">
+                        Near Greenbelt Shopping Center
                       </p>
                     </div>
                   </div>
@@ -285,10 +266,23 @@ const About = () => {
                     </div>
                     <div className="ml-4">
                       <h4 className="font-medium text-pastry-brown">Opening Hours</h4>
-                      <div className="text-gray-600 text-sm mt-1">
-                        <p>Mon - Sat: 7:00 AM - 8:00 PM</p>
-                        <p>Sunday: 8:00 AM - 5:00 PM</p>
-                        <p>Fiesta days: 7:00 AM - 10:00 PM</p>
+                      <div className="text-gray-600 mt-1 space-y-1">
+                        <div className="flex justify-between">
+                          <span>Monday - Friday:</span>
+                          <span>7:00 AM - 8:00 PM</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Saturday:</span>
+                          <span>8:00 AM - 9:00 PM</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Sunday:</span>
+                          <span>8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Holiday Hours:</span>
+                          <span className="text-pastry-berry">Special Schedule</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -297,7 +291,7 @@ const About = () => {
                 <div className="mt-8">
                   <Button variant="outline" className="w-full border-pastry-brown text-pastry-brown hover:bg-pastry-brown hover:text-white" asChild>
                     <Link to="/contact">
-                      Find Nearest Location
+                      Contact Us
                     </Link>
                   </Button>
                 </div>
@@ -331,7 +325,7 @@ const About = () => {
               asChild
             >
               <Link to="/contact">
-                Visit A Location
+                Contact Us
               </Link>
             </Button>
           </div>
