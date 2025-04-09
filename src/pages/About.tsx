@@ -3,132 +3,321 @@ import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Users, Award, Heart, Clock, MapPin } from 'lucide-react';
 
 const About = () => {
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <section className="relative bg-pastry-brown py-16 md:py-20">
+      {/* Hero Section with Parallax */}
+      <section className="relative bg-pastry-brown py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-pastry-brown to-pastry-brown/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-pastry-brown/90 to-pastry-brown/60"></div>
           <img 
-            src="https://images.unsplash.com/photo-1644991479446-1bb4d59119eb?q=80&w=1360&auto=format&fit=crop" 
-            alt="Bakery kitchen" 
-            className="w-full h-full object-cover opacity-40" 
+            src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1380&auto=format&fit=crop" 
+            alt="Filipino bakery" 
+            className="w-full h-full object-cover opacity-60"
+            style={{
+              transform: "scale(1.1)",
+              transformOrigin: "center",
+              animation: "subtleZoom 30s infinite alternate ease-in-out"
+            }}
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Our Story</h1>
-            <p className="text-lg text-pastry-cream">A passion for pastry excellence since 1995</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Our History */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-serif font-bold text-pastry-brown mb-6">Humble Beginnings</h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Pastry Palace began as a small family bakery in 1995. What started as a modest shop with just three signature pastries has grown into a beloved institution with over 100 unique creations that bring joy to our community every day.
+            <span className="inline-block px-4 py-1.5 bg-pastry-gold/90 text-pastry-brown rounded-full text-sm font-medium mb-4 transform animate-bounce">Est. 1995</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 animate-fade-in">Our Filipino Heritage</h1>
+            <p className="text-xl text-pastry-cream leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              A journey of passion, tradition, and Filipino baking excellence for over 25 years
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Our founder, Maria Johnson, learned the art of pastry making from her grandmother who immigrated from France with nothing but her cherished recipe book. Those same recipes, refined over generations, still form the heart of our offerings today.
-            </p>
-
-            <div className="my-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1591115765373-5207764f72e4?q=80&w=1470&auto=format&fit=crop" 
-                  alt="Old bakery photo" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="flex gap-6 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="text-center">
+                <div className="font-serif text-4xl text-pastry-gold font-bold">25+</div>
+                <div className="text-pastry-cream text-sm">Years of Experience</div>
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=1480&auto=format&fit=crop" 
-                  alt="Modern bakery" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="text-center">
+                <div className="font-serif text-4xl text-pastry-gold font-bold">100+</div>
+                <div className="text-pastry-cream text-sm">Unique Recipes</div>
+              </div>
+              <div className="text-center">
+                <div className="font-serif text-4xl text-pastry-gold font-bold">12</div>
+                <div className="text-pastry-cream text-sm">Locations</div>
               </div>
             </div>
-
-            <h2 className="text-3xl font-serif font-bold text-pastry-brown mb-6">Our Philosophy</h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              At Pastry Palace, we believe in creating exceptional pastries with only the finest ingredients. We source locally whenever possible and maintain strict quality standards for everything we serve.
-            </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Every pastry that leaves our kitchen is crafted with care, attention to detail, and a deep appreciation for the traditions that inspire us. We blend classic techniques with innovative ideas to create memorable flavors that surprise and delight.
-            </p>
-
-            <h2 className="text-3xl font-serif font-bold text-pastry-brown mb-6">Community First</h2>
-            <p className="text-gray-700 leading-relaxed">
-              We're more than just a bakery – we're an integral part of our community. We provide pastries for local events, donate to food banks, and work with schools to educate children about the joys of baking. Our success is measured not just in sales, but in the smiles we bring to our neighbors' faces.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 bg-pastry-background">
+      {/* Our Story Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-pastry-brown">Meet Our Team</h2>
-            <p className="text-gray-600 mt-2">The talented people behind our delicious creations</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1472&auto=format&fit=crop" 
+                    alt="Traditional Filipino pastries" 
+                    className="rounded-lg shadow-xl w-full"
+                  />
+                  <div className="absolute -bottom-8 -right-8 bg-pastry-gold/90 p-6 rounded-lg shadow-lg hidden md:block">
+                    <p className="text-pastry-brown italic font-serif text-lg">"Our secret is in the traditions passed down through generations"</p>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="mb-6 flex items-center">
+                  <div className="w-16 h-0.5 bg-pastry-berry mr-4"></div>
+                  <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm">Our Journey</h6>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">A Taste of Philippine Heritage</h2>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Pastry Palace began as a small family bakery in Manila back in 1995. Our founder, Maria Santos, learned the art of pastry making from her grandmother who perfected the balance of Spanish influences with native Filipino ingredients.
+                </p>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  What started as a modest shop selling pandesal and ensaymada has grown into a beloved institution featuring over 100 unique creations that combine international techniques with distinctly Filipino flavors like ube, pandan, and calamansi.
+                </p>
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Through economic challenges and changing times, our commitment to quality and authenticity has remained unwavering. Today, Pastry Palace continues to serve as a cornerstone of Filipino baking excellence.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-pastry-brown text-white hover:bg-pastry-brown/90"
+                >
+                  Discover Our Menu
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-pastry-background relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm mb-3">Our Core Values</h6>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">
+              The Heart of Our Bakery
+            </h2>
+            <p className="text-gray-700">
+              These principles have guided our bakery from our humble beginnings in Manila to our multiple locations across the Philippines today.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop" 
-                  alt="Head Pastry Chef" 
-                  className="w-full h-full object-cover"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-pastry-berry/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Heart className="w-8 h-8 text-pastry-berry" />
               </div>
-              <h3 className="font-serif font-medium text-lg text-pastry-brown">Maria Johnson</h3>
-              <p className="text-pastry-berry">Founder & Head Pastry Chef</p>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown text-center mb-4">Passion for Quality</h3>
+              <p className="text-gray-600 text-center">
+                We use only premium local ingredients, from Batangas butter to Davao chocolate, ensuring every bite is exceptional.
+              </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop" 
-                  alt="Executive Baker" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-pastry-berry/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Users className="w-8 h-8 text-pastry-berry" />
               </div>
-              <h3 className="font-serif font-medium text-lg text-pastry-brown">David Chen</h3>
-              <p className="text-pastry-berry">Executive Baker</p>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown text-center mb-4">Family Heritage</h3>
+              <p className="text-gray-600 text-center">
+                We preserve traditional Filipino baking methods while embracing innovation, creating a perfect blend of old and new.
+              </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-pastry-berry/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Award className="w-8 h-8 text-pastry-berry" />
+              </div>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown text-center mb-4">Community First</h3>
+              <p className="text-gray-600 text-center">
+                We actively support local farmers, participate in barangay events, and provide baking workshops for underprivileged youth.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
+      </section>
+
+      {/* Team Section with Filipino Context */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm mb-3">Our Team</h6>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">The Masters Behind Our Creations</h2>
+            <p className="text-gray-700">
+              Meet the talented people who combine Filipino tradition with modern techniques to create our delicious pastries.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="text-center group">
+              <div className="relative mb-6 mx-auto">
+                <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 border-4 border-pastry-gold/30 p-1 transform transition-all duration-300 group-hover:border-pastry-gold">
+                  <img 
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop" 
+                    alt="Head Pastry Chef" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pastry-gold text-pastry-brown px-4 py-1 rounded-full text-sm font-medium">
+                  Founder
+                </div>
+              </div>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown">Maria Santos</h3>
+              <p className="text-pastry-berry mb-3">Head Pastry Chef</p>
+              <p className="text-gray-600 max-w-xs mx-auto">
+                A culinary arts graduate from the University of the Philippines who specialized in traditional Filipino desserts.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-6 mx-auto">
+                <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 border-4 border-pastry-gold/30 p-1 transform transition-all duration-300 group-hover:border-pastry-gold">
+                  <img 
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop" 
+                    alt="Executive Baker" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pastry-gold text-pastry-brown px-4 py-1 rounded-full text-sm font-medium">
+                  Executive Chef
+                </div>
+              </div>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown">David Reyes</h3>
+              <p className="text-pastry-berry mb-3">Executive Baker</p>
+              <p className="text-gray-600 max-w-xs mx-auto">
+                Trained in France but specializes in incorporating local ingredients from Bicol and Pampanga regions.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-6 mx-auto">
+                <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 border-4 border-pastry-gold/30 p-1 transform transition-all duration-300 group-hover:border-pastry-gold">
+                  <img 
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1398&auto=format&fit=crop" 
+                    alt="Head Decorator" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pastry-gold text-pastry-brown px-4 py-1 rounded-full text-sm font-medium">
+                  Creative Lead
+                </div>
+              </div>
+              <h3 className="font-serif font-medium text-xl text-pastry-brown">Sarah Mendoza</h3>
+              <p className="text-pastry-berry mb-3">Head Decorator</p>
+              <p className="text-gray-600 max-w-xs mx-auto">
+                Known for incorporating traditional Filipino art patterns into her cake decorations and pastry designs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Map Section */}
+      <section className="py-20 bg-pastry-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h6 className="text-pastry-berry font-medium uppercase tracking-wider text-sm mb-3">Our Locations</h6>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-pastry-brown mb-6">Find Us Across the Philippines</h2>
+            <p className="text-gray-700">
+              From Manila to Davao, we bring our delicious pastries closer to you with multiple locations across the country.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-8">
+              <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1398&auto=format&fit=crop" 
-                  alt="Head Decorator" 
-                  className="w-full h-full object-cover"
+                  src="https://images.unsplash.com/photo-1604054094723-3a949e24311f?q=80&w=1470&auto=format&fit=crop" 
+                  alt="Philippines map" 
+                  className="w-full h-auto object-cover"
                 />
               </div>
-              <h3 className="font-serif font-medium text-lg text-pastry-brown">Sarah Miller</h3>
-              <p className="text-pastry-berry">Head Decorator</p>
+            </div>
+            
+            <div className="lg:col-span-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg h-full">
+                <h3 className="font-serif font-medium text-xl text-pastry-brown mb-6">Our Flagship Stores</h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <MapPin className="h-5 w-5 text-pastry-berry" />
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="font-medium text-pastry-brown">Manila</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        123 Rizal Avenue, Makati City
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <MapPin className="h-5 w-5 text-pastry-berry" />
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="font-medium text-pastry-brown">Cebu</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        45 Osmena Boulevard, Cebu City
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <MapPin className="h-5 w-5 text-pastry-berry" />
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="font-medium text-pastry-brown">Davao</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        78 Duterte Street, Davao City
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <Clock className="h-5 w-5 text-pastry-berry" />
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="font-medium text-pastry-brown">Opening Hours</h4>
+                      <div className="text-gray-600 text-sm mt-1">
+                        <p>Mon - Sat: 7:00 AM - 8:00 PM</p>
+                        <p>Sunday: 8:00 AM - 5:00 PM</p>
+                        <p>Fiesta days: 7:00 AM - 10:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <Button variant="outline" className="w-full border-pastry-brown text-pastry-brown hover:bg-pastry-brown hover:text-white" asChild>
+                    <Link to="/contact">
+                      Find Nearest Location
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-20 bg-pastry-brown">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-serif font-bold text-pastry-brown mb-4">Experience Our Passion</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            We invite you to visit our bakery and taste the difference that quality ingredients and time-honored techniques make.
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Experience Filipino Pastry Excellence</h2>
+          <p className="text-pastry-cream mb-8 max-w-2xl mx-auto text-lg">
+            From traditional pandesal to innovative ube-cheese ensaymada, taste why we've been the Philippines' favorite bakery for over two decades.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Button 
               size="lg" 
-              className="bg-pastry-brown text-white hover:bg-pastry-brown/90"
+              className="bg-pastry-gold text-pastry-brown hover:bg-pastry-gold/90 shadow-lg"
               asChild
             >
               <Link to="/menu">
@@ -138,11 +327,11 @@ const About = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-pastry-brown text-pastry-brown hover:bg-pastry-brown hover:text-white"
+              className="border-pastry-cream text-pastry-cream hover:bg-pastry-cream/10 border-2"
               asChild
             >
               <Link to="/contact">
-                Contact Us
+                Visit A Location
               </Link>
             </Button>
           </div>
